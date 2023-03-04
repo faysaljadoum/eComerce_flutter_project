@@ -22,10 +22,10 @@ class ProductDettaillScreen extends StatelessWidget {
             images: product.images,
             id: product.id,
           ),
-          SizedBox(
+          const SizedBox(
             height: 26,
           ),
-          ProductDettailBody(product: product),
+          ProductDetailsBody(product: product),
         ],
       ),
     );

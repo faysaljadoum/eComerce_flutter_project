@@ -1,5 +1,6 @@
 // import 'dart:html';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'Screens/Onboarding/welcomPage1.dart';
 import 'Screens/auth/Signup.dart';
 import 'Screens/auth/Signin.dart';
@@ -7,8 +8,10 @@ import 'Screens/cart/cartItems.dart';
 import 'Screens/home/home_screen.dart';
 import 'Screens/productDettaill/productDettaillScreen.dart';
 import 'Screens/profile/profileScreen.dart';
+import 'controllers/productController.dart';
 
 void main() {
+  Get.lazyPut(() => ProductController());
   runApp(const MyApp());
 }
 
@@ -17,13 +20,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/cartItems",
+      initialRoute: "/home",
       routes: {
         "/welcome": (context) => WelcomPage(),
         "/signin": (context) => const Signin(),
